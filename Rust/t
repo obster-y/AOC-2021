@@ -53,3 +53,48 @@ impl Drop for Timer {
         println!("Used: {} seconds", elsp);
     }
 }
+
+
+
+
+
+
+
+
+mod utils;
+use utils::timer::Timer;
+use utils::dataio;
+
+// mod day;
+
+fn main() {
+    // for i in 1..26 {
+    //     println!("pub mod day{:0>2};", i);
+    //     std::fs::File::create(format!("src/day/day{:0>2}.rs", i)).unwrap();
+    // }
+    {
+        // Day 01
+        let _timer = Timer::new();
+        let data_d1: Vec<i32> = dataio::read_data("data/day01.txt");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+pub fn solve(data: &[i32]) -> () {
+    let mut rv = 0;
+
+    for i in 0..data.len()-1 {
+        rv += if data[i] < data[i+1] { 1 } else { 0 };
+    }
+
+    println!("Result:\n{}", rv);
+}
+
